@@ -1,6 +1,7 @@
 from .hierarchy import Theme_Context
 from .invert_array import invert_count
 from .likes_dislikes import Student_Preferences
+import os
 
 """
     themes -> {cocina: [dulce, salado],
@@ -20,10 +21,14 @@ from .likes_dislikes import Student_Preferences
     
     si esta no es la entrada adaptarlo al mismo
 """
-def analize(themes, polls):
+def analize(themes, p):
     theme_context = Theme_Context()
     students = []
     
+    dicts_ = {}
+    themes = themes_modify(themes, dicts_)
+    polls = polls_modify(p, themes)
+
     for item in themes:
         theme_context.create_theme(item, themes[item])
 
@@ -36,65 +41,109 @@ def analize(themes, polls):
             invert_count(students[i], students[j])
     
     theme_context.stadistics_result(students)
-    sol = {}
+
     for (key, value) in theme_context.stadistics.items():
-        new_value = {}
-        new_value.update({"ModeText": value.mode_text})
-        new_value.update({"MedianText": value.median_text})
-        new_value.update({"VarianceCoefText": value.variance_coef_text})
-        sol.update({key: new_value})
-    return sol
+        print(key)
+        print(value.mode_text)
+        print(value.median_text)
+        print(value.variance_coef_text)
+        
+        for (k,v) in value.percent.items():
+            print("Tema: " + str(k) + " representa un " + str(v) + " porciento")
+        
+        print("---------------------------------")    
+    
+    countf = 1
+    while True:
+        filePath = 'poll_' + str(countf) + ".txt"
+        if checkFileExistance(filePath):
+            countf += 1
+        else:
+            f = open(filePath, 'w')
+            break
+            
+    text_ = ""
+    for std in students:
+        text_ += "////////////////////////////////////////////////////////////////////////////////////////////////\r\n"
+        text_ += "Id del encuestado: " + str(std.name) + "\r\n"
 
-# p = {'Ivan': {'postres' : ['donnas', 'flan', 'torticas', 'cake'], 
-#               'jamon': ['serrano', 'baicon', 'ahumado'], 
-#               'queso': ['gouda', 'blanco'],
-#               'cereales': ['arroz', 'maiz'],
-#               'Tokio': ['morenas del Caribe', 'Rusia'],
-#               'mundial': ['2008',  'Alemania'],
-#               'Beijing': [],
-#               'chocolate': ['negro', 'blanco', 'leche']},
-#     'Juan': {'postres' : ['donnas', 'flan', 'torticas', 'cake'], 
-#               'jamon': ['serrano', 'baicon', 'ahumado'], 
-#               'queso': ['gouda', 'blanco'],
-#               'cereales': ['arroz', 'maiz'],
-#               'Tokio': [],
-#               'Beijing': [],
-#               'mundial': ['2008', 'Espanna',  'Alemania'],
-#               'chocolate': ['negro', 'blanco', 'leche']},
-#     'Ana': {'postres' : ['donnas'], 
-#               'jamon': ['serrano', 'baicon', 'ahumado'], 
-#               'queso': ['gouda', 'blanco'],
-#               'cereales': [],
-#               'Tokio': ['morenas del Caribe', 'Rusia'],
-#               'mundial': ['2008', 'Espanna',  'Alemania'],
-#               'Beijing': [],
-#               'chocolate': ['negro', 'blanco', 'leche']},
-#     'Manuel': {'postres' : ['donnas', 'flan', 'torticas', 'cake'], 
-#               'jamon': [], 
-#               'queso': ['gouda', 'blanco'],
-#               'cereales': ['arroz', 'maiz'],
-#               'Tokio': ['chinos', 'Rusia', 'coreanas'],
-#               'mundial': ['2008', 'Espanna',  'Alemania'],
-#               'Beijing': [],
-#               'chocolate': ['negro', 'blanco', 'leche']},
-#     'Rosa': {'postres' : ['donnas', 'flan', 'cake'], 
-#               'jamon': ['serrano', 'baicon', 'ahumado'], 
-#               'queso': [],
-#               'Beijing': [],
-#               'cereales': ['arroz', 'maiz'],
-#               'Tokio': ['morenas del Caribe', 'Rusia'],
-#               'mundial': [],
-#               'chocolate': ['negro', 'blanco', 'leche']} }
-# t = {
-#     'boleivol': ['olimpiadas'],
-#     'dulce': ['postres', 'chocolate'],
-#     'salado': ['cereales', 'jamon', 'queso'],
-#     'futboll': ['mundial'],
-#     'cocina': ['dulce', 'salado'],
-#     'deporte': ['futboll', 'boleivol'],
-#     'olimpiadas': ['Tokio', 'Beijing'],
-#     'Poll': ['cocina', 'deporte']}
+        mark = False
+        s = ""
+        for a in std.preferences:
+            if a[1] == 0:
+                break
+            mark = True
+            s += str(a[0]) + " , "
+        
+        if mark:
+            text_ += "Respuestas a la encuesta: " + "\r\n"
+            text_ += s + "\r\n"
 
-#     #tener siempre como padre del poll a la llave Poll con los subthemas q no tienen padre
+        text_ += "Gustos semejantes: " + "\r\n"
 
-# analize(t, p)
+        for std1 in std.likes.keys():
+            text_ += str(std1.name) + ":\r\r"
+            for value in std.likes[std1]:
+                if value[0][1] > 0:
+                    text_ += str(value[0][0]) + " , "
+            text_ += "\r\n"    
+        
+        text_ += "Gustos alejados: " + "\r\n"
+
+        for std1 in std.dislikes.keys():
+            text_ += str(std1.name) + ":\r\r"
+            for value in std.dislikes[std1]:
+                if value[0][1] > 0:
+                    text_ += str(value[0][0]) + " , "
+            text_ += "\r\n"    
+
+    f.write(text_)
+    f.close()
+
+
+def checkFileExistance(filePath):
+    try:
+        with open(filePath, 'r'):
+            return True
+    except FileNotFoundError:
+        return False
+    except IOError:
+        return False
+
+def themes_modify(t, dict_):
+    t0 = {}
+    nones_count = 0
+
+    for key, values in t.items():
+        for value in values:
+            if value == "none":
+                dict_[key] = nones_count
+                nones_count += 1
+
+    for (theme, subthemes) in t.items():
+        add = []
+        for sub in subthemes:
+            if sub == "none":
+                add.append("none" + str(dict_[theme]))
+            else:
+                add.append(sub)
+        t0[theme] = add
+    return t0
+
+def polls_modify(p, t):
+    polls = {}
+
+    for (student, poll) in p.items():
+        p = {}
+        for values in poll.values():
+            for value in values:
+                p[value] = ["1"]
+        
+        for values in t.values():
+            for value in values:
+                if (not (value in t.keys())) and (not (value in p.keys())):
+                    p[value] = []
+
+        polls[student] = p
+    
+    return polls

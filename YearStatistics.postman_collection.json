@@ -1,0 +1,303 @@
+{
+	"info": {
+		"_postman_id": "e23aa903-84f3-47f8-abd9-9c36627603a7",
+		"name": "YearStatistics",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Q Manual",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"logoPosition\": \"right\",\r\n    \"pages\": [\r\n     {\r\n      \"name\": \"Deportes y Entrenamientos\",\r\n      \"elements\": [\r\n       {\r\n        \"type\": \"checkbox\",\r\n        \"name\": \"Practicar deportes\",\r\n        \"title\": \"¿Practicas algún deporte? \",\r\n        \"isRequired\": true,\r\n        \"choices\": [\r\n         \"Fútbol\",\r\n         \"Baloncesto\",\r\n         \"Béisbol\",\r\n         \"Artes Marciales\",\r\n         \"Natación\",\r\n         \"Tenis\"\r\n        ],\r\n        \"hasOther\": true,\r\n        \"hasNone\": true,\r\n        \"noneText\": \"Ninguno\",\r\n        \"otherText\": \"¿Otro?¿Cuál?\",\r\n        \"colCount\": 3,\r\n        \"hasSelectAll\": true,\r\n        \"selectAllText\": \"Todos\"\r\n       },\r\n       {\r\n        \"type\": \"checkbox\",\r\n        \"name\": \"entrenamiento\",\r\n        \"title\": \"¿Cuáles entrenamientos realizas? \",\r\n        \"isRequired\": true,\r\n        \"choices\": [\r\n         \"Gimnacio\",\r\n         \"Yoga\",\r\n         \"Spinnig\",\r\n         {\r\n          \"value\": \"Jogging \",\r\n          \"text\": \"Jogging o Running\"\r\n         },\r\n         \"Crossfit\",\r\n         \"Pilates\"\r\n        ],\r\n        \"hasOther\": true,\r\n        \"hasNone\": true,\r\n        \"noneText\": \"Ninguno\",\r\n        \"otherText\": \"¿Otro?¿Cuál?\",\r\n        \"colCount\": 3,\r\n        \"hasSelectAll\": true,\r\n        \"selectAllText\": \"Todos\"\r\n       }\r\n      ],\r\n      \"title\": \"¿A qué dedicas tu tiempo libre?\",\r\n      \"description\": \"Deportes y Entrenamientos\"\r\n     },\r\n     {\r\n      \"name\": \"Géneros y Tipos de Programas\",\r\n      \"elements\": [\r\n       {\r\n        \"type\": \"checkbox\",\r\n        \"name\": \"tv\",\r\n        \"title\": \"¿Qué tipo de contenido prefieres? \",\r\n        \"isRequired\": true,\r\n        \"choices\": [\r\n         \"Películas\",\r\n         \"Series\",\r\n         \"Telenovelas\",\r\n         \"Documentales\",\r\n         \"Anime\",\r\n         \"Doramas\",\r\n         \"Shows \"\r\n        ],\r\n        \"hasNone\": true,\r\n        \"noneText\": \"Ninguno\",\r\n        \"colCount\": 3,\r\n        \"hasSelectAll\": true,\r\n        \"selectAllText\": \"Todos\"\r\n       },\r\n       {\r\n        \"type\": \"checkbox\",\r\n        \"name\": \"generos\",\r\n        \"title\": \"¿Cuáles géneros te gustan? \",\r\n        \"isRequired\": true,\r\n        \"choices\": [\r\n         \"Comedia\",\r\n         \"Drama\",\r\n         \"Terror\",\r\n         \"Aventura\",\r\n         \"Ciencia Ficción\",\r\n         \"Acción\",\r\n         \"Biografía\",\r\n         \"Musical\",\r\n         \"Policíaco\",\r\n         \"Animados\"\r\n        ],\r\n        \"hasNone\": true,\r\n        \"noneText\": \"Ninguno\",\r\n        \"colCount\": 3,\r\n        \"hasSelectAll\": true,\r\n        \"selectAllText\": \"Todos\"\r\n       },\r\n       {\r\n        \"type\": \"checkbox\",\r\n        \"name\": \"programas\",\r\n        \"title\": \"¿Qué tipo de programas prefieres? \",\r\n        \"isRequired\": true,\r\n        \"choices\": [\r\n         \"Cocina\",\r\n         \"Supervivencia\",\r\n         \"Entrevistas a celebridades\",\r\n         \"Concursos\",\r\n         \"Reality\",\r\n         \"Noticieros\",\r\n         \"Humorísticos\"\r\n        ],\r\n        \"hasNone\": true,\r\n        \"noneText\": \"Ninguno\",\r\n        \"colCount\": 3,\r\n        \"hasSelectAll\": true,\r\n        \"selectAllText\": \"Todos\"\r\n       }\r\n      ],\r\n      \"title\": \"¿A qué dedicas tu tiempo libre? \",\r\n      \"description\": \"Géneros y Tipos de Programas\"\r\n     },\r\n     {\r\n      \"name\": \"Sagas Favoritas\",\r\n      \"elements\": [\r\n       {\r\n        \"type\": \"checkbox\",\r\n        \"name\": \"sagas\",\r\n        \"title\": \"¿Cuáles son tus sagas preferidas? \",\r\n        \"isRequired\": true,\r\n        \"choices\": [\r\n         \"Harry Potter\",\r\n         \"El Señor de los Anillos\",\r\n         \"The Hobbit\",\r\n         \"Star Wars\",\r\n         \"The Matrix\",\r\n         \"X-Men\",\r\n         \"The Hunger Games\",\r\n         \"Universo Marvel\",\r\n         \"Universo DC\",\r\n         \"Piratas del Caribe\",\r\n         \"El Padrino\",\r\n         \"Rocky\",\r\n         \"007\",\r\n         \"Star Trek\",\r\n         \"Indiana Jones\",\r\n         \"Terminator\",\r\n         \"Jurassic Park\",\r\n         \"The Fast & The Furious\",\r\n         \"Saw\"\r\n        ],\r\n        \"hasOther\": true,\r\n        \"hasNone\": true,\r\n        \"noneText\": \"Ninguno\",\r\n        \"otherText\": \"¿Otro? ¿Cuál? \",\r\n        \"colCount\": 4,\r\n        \"hasSelectAll\": true,\r\n        \"selectAllText\": \"Todos\"\r\n       },\r\n       {\r\n        \"type\": \"checkbox\",\r\n        \"name\": \"pelis\",\r\n        \"title\": \"¿Cuáles son tus pelis favoritas? \",\r\n        \"isRequired\": true,\r\n        \"choices\": [\r\n         \"Forrest Gump\",\r\n         \"Casablanca\",\r\n         \"Intocable\",\r\n         \"The Departed\",\r\n         \"Titanic\",\r\n         \"Gladiator\",\r\n         \"El pianista\",\r\n         \"Léon: The Professional\",\r\n         \"Dirty Dancing\",\r\n         \"Parasite\",\r\n         \"The Green Mile\",\r\n         \"Saving Private Ryan\",\r\n         \"La vida es bella\",\r\n         \"El silencio de los corderos\",\r\n         \"Figth Club\",\r\n         \"Pulp Fiction\",\r\n         \"La lista de Schindler\",\r\n         \"Cadena Perpetua\",\r\n         \"Scarface\",\r\n         \"Braveheart\",\r\n         \"Bohemian Rhapsody\",\r\n         \"Django Unchained \",\r\n         \"El resplandor\",\r\n         \"Inception\",\r\n         \"The Imitation Game\",\r\n         \"Inglourious Basterds\"\r\n        ],\r\n        \"hasOther\": true,\r\n        \"hasNone\": true,\r\n        \"noneText\": \"Ninguno\",\r\n        \"otherText\": \"¿Otro? ¿Cuál? \",\r\n        \"colCount\": 4,\r\n        \"hasSelectAll\": true,\r\n        \"selectAllText\": \"Todos\"\r\n       },\r\n       {\r\n        \"type\": \"checkbox\",\r\n        \"name\": \"animados\",\r\n        \"title\": \"¿Cuáles son tus muñes adoras? \",\r\n        \"isRequired\": true,\r\n        \"choices\": [\r\n         \"La Era del Hielo\",\r\n         \"Shrek\",\r\n         \"Toy Story\",\r\n         \"Up\",\r\n         \"Coco\",\r\n         \"Wall-E\",\r\n         \"Brave\",\r\n         \"Frozen\",\r\n         \"Soul\",\r\n         \"El viaje de Chihiro \",\r\n         \"La tumba de las luciérnagas\",\r\n         \"La Princesa Mononoke\",\r\n         \"El Rey León\",\r\n         \"Mulán\",\r\n         \"Despicable Me\",\r\n         \"Kung-Fu Panda\",\r\n         \"Madagascar\",\r\n         \"Los Increíbles\",\r\n         \"Ratatouille\",\r\n         \"Monster INC\",\r\n         \"Finding Nemo\",\r\n         \"El castillo ambulante\"\r\n        ],\r\n        \"hasOther\": true,\r\n        \"hasNone\": true,\r\n        \"noneText\": \"Ninguno\",\r\n        \"otherText\": \"¿Otro? ¿Cuál? \",\r\n        \"colCount\": 4,\r\n        \"hasSelectAll\": true,\r\n        \"selectAllText\": \"Todos\"\r\n       },\r\n       {\r\n        \"type\": \"checkbox\",\r\n        \"name\": \"series\",\r\n        \"title\": \"¿Cuáles series prefieres? \",\r\n        \"isRequired\": true,\r\n        \"choices\": [\r\n         \"Game of Thrones\",\r\n         \"Peaky Blinders\",\r\n         \"Vikings\",\r\n         \"La Casa de Papel\",\r\n         \"Friends\",\r\n         \"The Big Bang Theory\",\r\n         \"How I Met Your Mother\",\r\n         \"Aída\",\r\n         \"La que se avecina\",\r\n         \"Aquí no hay quien viva\",\r\n         \"The Witcher\",\r\n         \"Entourage\",\r\n         \"The Handmaid's Tale\",\r\n         \"Futurama\",\r\n         \"The Simpsons\",\r\n         \"Silicon Valley\",\r\n         \"Big Little Lies\",\r\n         \"Spartacus\",\r\n         \"Sons of Anarchy\",\r\n         \"Mr. Robot\",\r\n         \"Adventure Time\",\r\n         \"The Crown\",\r\n         \"Westworld\",\r\n         \"BoJack Horseman\",\r\n         \"South Park\",\r\n         \"House of Cards\",\r\n         \"Stranger Things\",\r\n         \"Dark\",\r\n         \"The Mandalorian\",\r\n         \"Gravity Falls\",\r\n         \"The Sopranos\",\r\n         \"Rick and Morty\",\r\n         \"Avatar: The Last Airbender\",\r\n         \"Breaking Bad\",\r\n         \"The Walking Dead\",\r\n         \"Euphoria\",\r\n         \"Squid Game\",\r\n         \"You\",\r\n         \"Sex Education\",\r\n         \"The Umbrella Academy\",\r\n         \"Arcane\"\r\n        ],\r\n        \"hasOther\": true,\r\n        \"hasNone\": true,\r\n        \"noneText\": \"Ninguno\",\r\n        \"otherText\": \"¿Otro? ¿Cuál? \",\r\n        \"colCount\": 5,\r\n        \"hasSelectAll\": true,\r\n        \"selectAllText\": \"Todos\"\r\n       },\r\n       {\r\n        \"type\": \"checkbox\",\r\n        \"name\": \"anime\",\r\n        \"title\": \"¿Cuáles animes te gustan? \",\r\n        \"isRequired\": true,\r\n        \"choices\": [\r\n         \"Shingeki no Kyojin\",\r\n         \"Naruto\",\r\n         \"One Piece\",\r\n         \"Bleach\",\r\n         \"Voltes V\",\r\n         \"Kimetsu no Yaiba\",\r\n         \"Fullmetal Alchemist\",\r\n         \"Dragon Ball Z\",\r\n         \"Death Note\",\r\n         \"Sailor Moon\",\r\n         \"Hunter X Hunter\",\r\n         \"My Hero Academia\",\r\n         \"Jujutsu Kaisen\",\r\n         \"Cowboy Bebop\",\r\n         \"Fairy Tail\",\r\n         \"Dead Man Wonderland\",\r\n         \"Boruto\",\r\n         \"Berserk\",\r\n         \"Black Clover\",\r\n         \"Tensei Shitara Slime Datta Ken\",\r\n         \"Vinland Saga\",\r\n         \"Mushoku Tensei \"\r\n        ],\r\n        \"hasOther\": true,\r\n        \"hasNone\": true,\r\n        \"noneText\": \"Ninguno\",\r\n        \"otherText\": \"¿Otro? ¿Cuál? \",\r\n        \"colCount\": 4,\r\n        \"hasSelectAll\": true,\r\n        \"selectAllText\": \"Todos\"\r\n       }\r\n      ],\r\n      \"title\": \"¿A qué dedicas tu tiempo libre? \",\r\n      \"description\": \"Tus Favoritos\"\r\n     },\r\n     {\r\n      \"name\": \"Videojuegos\",\r\n      \"elements\": [\r\n       {\r\n        \"type\": \"checkbox\",\r\n        \"name\": \"videogameType\",\r\n        \"title\": \"¿Qué tipos de videojuegos te gustan?\",\r\n        \"isRequired\": true,\r\n        \"choices\": [\r\n         \"Arcade\",\r\n         \"Plataformas\",\r\n         \"Disparos\",\r\n         \"Peleas\",\r\n         \"Aventura de Acción\",\r\n         \"Aventura Gráfica\",\r\n         \"Juegos de Rol (RPG)\",\r\n         \"Puzzle\",\r\n         \"Didáctido\",\r\n         \"Estrategia\",\r\n         \"Simulación\",\r\n         \"Carreras\",\r\n         \"Deportes\",\r\n         \"Juegos de Mesa\"\r\n        ],\r\n        \"hasNone\": true,\r\n        \"noneText\": \"Ninguno\",\r\n        \"colCount\": 3,\r\n        \"hasSelectAll\": true,\r\n        \"selectAllText\": \"Todos\"\r\n       },\r\n       {\r\n        \"type\": \"checkbox\",\r\n        \"name\": \"videogameFav\",\r\n        \"title\": \"¿Cuáles son tus videojuegos favoritos? \",\r\n        \"isRequired\": true,\r\n        \"choices\": [\r\n         \"Fifa\",\r\n         \"Call of Duty\",\r\n         \"Dota\",\r\n         \"Axie Infinity\",\r\n         \"The Legend of Zelda\",\r\n         \"Red Dead Redemption\\t Persona 5 Royal\",\r\n         \"Super Smash Bros\\t Super Mario\",\r\n         \"The Last of Us\",\r\n         \"Forza Horizon\\t Grand Theft Auto\",\r\n         \"God of War\",\r\n         \"Fortnite\",\r\n         \"StarCraft\",\r\n         \"The Elder Scrolls V: Skyrim\",\r\n         \"Sekiro: Shadows Die Twice\",\r\n         \"BioShock\",\r\n         \"Uncharted\\t The Witcher\",\r\n         \"Bloodborne\\t Divinity\",\r\n         \"Minecraft\",\r\n         \"Doom\",\r\n         \"Just Dance\",\r\n         \"Dark Souls\",\r\n         \"Final Fantasy\",\r\n         \"Pokémon\",\r\n         \"Dragon Quest\",\r\n         \"Fallout\",\r\n         \"Crysis\",\r\n         \"Mario Kart\",\r\n         \"Monster Hunter\",\r\n         \"Warcraft\",\r\n         \"Far Cry\",\r\n         \"Batman\",\r\n         \"League of Legends\",\r\n         \"Rust\",\r\n         \"VALORANT\",\r\n         \"Garena Free Fire\",\r\n         \"Counter-Strike: Global Offensive\",\r\n         \"Assassin's Creed\",\r\n         \"Clash Royale\",\r\n         \" Among Us\",\r\n         \"PlayerUnknown's Battlegrounds\",\r\n         \" Cyberpunk 2077\",\r\n         \"Battlefield\",\r\n         \"Halo\"\r\n        ],\r\n        \"hasOther\": true,\r\n        \"hasNone\": true,\r\n        \"noneText\": \"Ninguno\",\r\n        \"otherText\": \"¿Otro? ¿Cuál? \",\r\n        \"colCount\": 5,\r\n        \"hasSelectAll\": true,\r\n        \"selectAllText\": \"Todos\"\r\n       }\r\n      ],\r\n      \"title\": \"¿A qué dedicas tu tiempo libre? \",\r\n      \"description\": \"Videojuegos\"\r\n     },\r\n     {\r\n      \"name\": \"Música\",\r\n      \"elements\": [\r\n       {\r\n        \"type\": \"checkbox\",\r\n        \"name\": \"musicGender\",\r\n        \"title\": \"¿Cuáles géneros musicales prefieres? \",\r\n        \"isRequired\": true,\r\n        \"choices\": [\r\n         \"Clásica\",\r\n         \"Blues\",\r\n         \"Jazz\",\r\n         \"Rock and Roll\",\r\n         \"Soul\",\r\n         \"Rock\",\r\n         \"Metal\",\r\n         \"Country\",\r\n         \"Disco\",\r\n         \"Electrónica\",\r\n         \"Pop\",\r\n         \"Reggae\",\r\n         \"Salsa\",\r\n         \"Hip Hop\",\r\n         \"Reggaeton\",\r\n         \"Trova\"\r\n        ],\r\n        \"hasNone\": true,\r\n        \"noneText\": \"Ninguno\",\r\n        \"colCount\": 3,\r\n        \"hasSelectAll\": true,\r\n        \"selectAllText\": \"Todos\"\r\n       },\r\n       {\r\n        \"type\": \"checkbox\",\r\n        \"name\": \"artist\",\r\n        \"title\": \"¿Cuáles artistas sueles escuchar? \",\r\n        \"isRequired\": true,\r\n        \"choices\": [\r\n         \"The Weeknd\",\r\n         \"Justin Bieber\",\r\n         \"Ed Sheeran\",\r\n         \"Dua Lipa\",\r\n         \"Adele\",\r\n         \"Coldplay\",\r\n         \"Imagine Dragons\",\r\n         \"Ariana Grande\\t\",\r\n         \"Bruno Mars\",\r\n         \"Drake\",\r\n         \"Taylor Swift\",\r\n         \"J Balvin\",\r\n         \"Elton John\",\r\n         \"David Guetta\\t\",\r\n         \"Billie Eilish\",\r\n         \"Eminem\",\r\n         \"Post Malone\",\r\n         \"Rihanna\",\r\n         \"BTS\",\r\n         \"Bad Bunny\",\r\n         \"Queen\",\r\n         \"Shawn Mendes\",\r\n         \"Maroon 5\",\r\n         \"Elvis Presley\",\r\n         \"Bob Marley\",\r\n         \"The Beatles\",\r\n         \"Michael Jackson\",\r\n         \"Prince\",\r\n         \"Whitney Houston\",\r\n         \"Christina Aguilera\",\r\n         \" Nirvana\",\r\n         \"The Rolling Stones\",\r\n         \"U2\",\r\n         \"Pink Floyd\",\r\n         \"Led Zeppelin\",\r\n         \"Metallica\",\r\n         \"Guns N Roses\",\r\n         \"AC/DC\",\r\n         \"Spice Girls\",\r\n         \"Backstreet Boys\",\r\n         \"OneRepublic\",\r\n         \"Avicii\",\r\n         \"Los Aldeanos\",\r\n         \"Gente de Zona\",\r\n         \"Buena Fe\",\r\n         \"Leoni Torres\",\r\n         \"Silvio Rodríguez\",\r\n         \"Pablo Milanés\",\r\n         \"Calle 13\",\r\n         \"Ozuna\",\r\n         \"Maluma\",\r\n         \"Cimafunk\",\r\n         \"Decemer Bueno\",\r\n         \"Ricardo Arjona\",\r\n         \"Marc Anthony\",\r\n         \"Nicky Jam\",\r\n         \"Anuel AA\",\r\n         \"Karol G\",\r\n         \"Alejandro Sanz\",\r\n         \"Shakira\",\r\n         \"Beyonce\",\r\n         \"Lady Gaga\",\r\n         \"Kelvis Ochoa\",\r\n         \"X Alfonso\",\r\n         \"Carlos Varela\",\r\n         \"Frank Delgado\",\r\n         \"Los Van Van\"\r\n        ],\r\n        \"hasOther\": true,\r\n        \"hasNone\": true,\r\n        \"noneText\": \"Ninguno\",\r\n        \"otherText\": \"¿Otro? ¿Cuál? \",\r\n        \"colCount\": 5,\r\n        \"hasSelectAll\": true,\r\n        \"selectAllText\": \"Todos\"\r\n       }\r\n      ],\r\n      \"title\": \"¿A qué dedicas tu tiempo libre? \",\r\n      \"description\": \"Música\"\r\n     },\r\n     {\r\n      \"name\": \"Literatura\",\r\n      \"elements\": [\r\n       {\r\n        \"type\": \"checkbox\",\r\n        \"name\": \"bookType\",\r\n        \"title\": \"¿Qué tipo de literatura disfrutas leer? \",\r\n        \"isRequired\": true,\r\n        \"choices\": [\r\n         \"Ficción\",\r\n         \"Fantasía\",\r\n         \"Poesía\",\r\n         \"No Ficción\",\r\n         \"Romántica\",\r\n         \"Historietas\",\r\n         \"Érotica\",\r\n         \"Policíaca\",\r\n         \"Misterio\",\r\n         \"Terror\",\r\n         \"Científica\",\r\n         \"Autoayuda\",\r\n         \"Cocina\",\r\n         \"Filosófica\"\r\n        ],\r\n        \"hasNone\": true,\r\n        \"noneText\": \"Ninguno\",\r\n        \"colCount\": 2,\r\n        \"hasSelectAll\": true,\r\n        \"selectAllText\": \"Todos\"\r\n       },\r\n       {\r\n        \"type\": \"checkbox\",\r\n        \"name\": \"autors\",\r\n        \"title\": \"¿Cuáles son tus autores preferidos?  \",\r\n        \"isRequired\": true,\r\n        \"choices\": [\r\n         \"Miguel de Cervantes\",\r\n         \"William Shakespeare\",\r\n         \"Jorge Luis Borges\",\r\n         \"Franz Kafka\",\r\n         \"Dante\",\r\n         {\r\n          \"value\": \"Marqués de Sadede Sade\",\r\n          \"text\": \"Marqués de Sade\"\r\n         },\r\n         \"Lope de Vega\",\r\n         \"Albert Camus\",\r\n         \"Pablo Neruda\",\r\n         \"Mario Benedetti\",\r\n         \"Rubén Darío\",\r\n         \"Federico García Lorca\",\r\n         \"Gabriela Mistral\",\r\n         \"Isable Allende\",\r\n         \"Gabriel García Márquez\",\r\n         \"José Martí\",\r\n         \"Oscar Wilde\",\r\n         \"Fiódor Dostoyevski\",\r\n         \"Stephen King\",\r\n         \"Julio Verne\",\r\n         \"Ernest Hemingway\",\r\n         \"J.K. Rowling\",\r\n         \"Agatha Christie\",\r\n         \"J. R. R. Tolkien\",\r\n         \"Eduardo Galeano\",\r\n         \"William Faulkner\",\r\n         \"James Joyce\",\r\n         \"George Orwell\",\r\n         \"Haruki Murakami\",\r\n         \"Charles Dickens\",\r\n         \"Charles Darwin\",\r\n         \"Herman Melville\",\r\n         \"Arthur Conan Doyle\",\r\n         \"Edgar Allan Poe\",\r\n         \"Lewis Carroll\",\r\n         \"Robert Louis Stevenson\",\r\n         \"Nicolás Maquiavelo\",\r\n         \"Hermann Hesse\",\r\n         \"Jack London\",\r\n         \"Alejo Carpentier\",\r\n         \"José María Heredia\",\r\n         \"Cirilo Villaverde\",\r\n         \"Gertrudis Gómez de Avellaneda\",\r\n         \"Julián del Casal\",\r\n         \"Dulce María Loynaz\",\r\n         \"Nicolás Guillén\",\r\n         \"José Lezama Lima\",\r\n         \"Virgilio Piñera\",\r\n         \"Onelio Jorge Cardoso\",\r\n         \"Eliseo Diego\",\r\n         \"Reinaldo Arenas\",\r\n         \"Leonardo Padura\",\r\n         \"Gustavo Adolfo Bécquer\",\r\n         \"Antonio Machado\",\r\n         \"Luis Rogelio Nogueras\"\r\n        ],\r\n        \"hasOther\": true,\r\n        \"hasNone\": true,\r\n        \"noneText\": \"Ninguno\",\r\n        \"otherText\": \"Otro? Cual?\",\r\n        \"colCount\": 4,\r\n        \"hasSelectAll\": true,\r\n        \"selectAllText\": \"Todos\"\r\n       }\r\n      ],\r\n      \"title\": \"¿A qué dedicas tu tiempo libre? \",\r\n      \"description\": \"Literatura\"\r\n     }\r\n    ]\r\n   }"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/questionnaire-create",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"questionnaire-create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Response Q",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Practicar deportes\": [\r\n        \"Fútbol\"\r\n    ],\r\n    \"entrenamiento\": [\r\n        \"Yoga\",\r\n        \"Crossfit\"\r\n    ],\r\n    \"tv\": [\r\n        \"Películas\",\r\n        \"Series\"\r\n    ],\r\n    \"generos\": [\r\n        \"Aventura\",\r\n        \"Acción\"\r\n    ],\r\n    \"programas\": [\r\n        \"Concursos\"\r\n    ],\r\n    \"sagas\": [\r\n        \"Harry Potter\",\r\n        \"Universo DC\"\r\n    ],\r\n    \"pelis\": [\r\n        \"Pulp Fiction\",\r\n        \"Parasite\",\r\n        \"other\"\r\n    ],\r\n    \"animados\": [\r\n        \"Madagascar\",\r\n        \"El viaje de Chihiro \",\r\n        \"other\"\r\n    ],\r\n    \"series\": [\r\n        \"The Simpsons\",\r\n        \"Friends\"\r\n    ],\r\n    \"anime\": [\r\n        \"Voltes V\"\r\n    ],\r\n    \"videogameType\": [\r\n        \"Arcade\",\r\n        \"Disparos\"\r\n    ],\r\n    \"videogameFav\": [\r\n        \"Fifa\",\r\n        \"Dark Souls\"\r\n    ],\r\n    \"musicGender\": [\r\n        \"Pop\",\r\n        \"Metal\"\r\n    ],\r\n    \"artist\": [\r\n        \"Queen\",\r\n        \"Elton John\"\r\n    ],\r\n    \"bookType\": [\r\n        \"none\"\r\n    ],\r\n    \"autors\": [\r\n        \"Dulce María Loynaz\",\r\n        \"Edgar Allan Poe\"\r\n    ],\r\n    \"pelis-Comment\": \"Fresa y Chocolate\",\r\n    \"animados-Comment\": \"The Croods\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/questionnaire-response/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"questionnaire-response",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Process Q",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/questionnaire-process/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"questionnaire-process",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Process Q Popular Themes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/process-most-popular-themes/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"process-most-popular-themes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Process Q Popular Subthemes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/process-most-popular-subthemes/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"process-most-popular-subthemes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Creativity Q",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"question1\": [\r\n        \"0\"\r\n    ],\r\n    \"question2\": [\r\n        \"1\"\r\n    ],\r\n    \"question3\": [\r\n        \"1\"\r\n    ],\r\n    \"question4\": [\r\n        \"3\"\r\n    ],\r\n    \"question5\": [\r\n        \"1\"\r\n    ],\r\n    \"question6\": [\r\n        \"3\"\r\n    ],\r\n    \"question7\": [\r\n        \"0\"\r\n    ],\r\n    \"question8\": [\r\n        \"1\"\r\n    ],\r\n    \"question9\": [\r\n        \"-1\"\r\n    ],\r\n    \"question10\": [\r\n        \"1\"\r\n    ],\r\n    \"question11\": [\r\n        \"4\"\r\n    ],\r\n    \"question12\": [\r\n        \"0\"\r\n    ],\r\n    \"question13\": [\r\n        \"0\"\r\n    ],\r\n    \"question14\": [\r\n        \"4\"\r\n    ],\r\n    \"question15\": [\r\n        \"0\"\r\n    ],\r\n    \"question16\": [\r\n        \"0\"\r\n    ],\r\n    \"question17\": [\r\n        \"0\"\r\n    ],\r\n    \"question18\": [\r\n        \"0\"\r\n    ],\r\n    \"question19\": [\r\n        \"0\"\r\n    ],\r\n    \"question20\": [\r\n        \"1\"\r\n    ],\r\n    \"question21\": [\r\n        \"0\"\r\n    ],\r\n    \"question22\": [\r\n        \"0\"\r\n    ],\r\n    \"question23\": [\r\n        \"2\"\r\n    ],\r\n    \"question24\": [\r\n        \"2\"\r\n    ],\r\n    \"question25\": [\r\n        \"1\"\r\n    ],\r\n    \"question26\": [\r\n        \"-1\"\r\n    ],\r\n    \"question27\": [\r\n        \"1\"\r\n    ],\r\n    \"question28\": [\r\n        \"-1\"\r\n    ],\r\n    \"question29\": [\r\n        \"1\"\r\n    ],\r\n    \"question30\": [\r\n        \"-2\"\r\n    ],\r\n    \"question31\": [\r\n        \"1\"\r\n    ],\r\n    \"question32\": [\r\n        \"2\"\r\n    ],\r\n    \"question33\": [\r\n        \"0\"\r\n    ],\r\n    \"question34\": [\r\n        \"-1\"\r\n    ],\r\n    \"question35\": [\r\n        \"1\"\r\n    ],\r\n    \"question36\": [\r\n        \"1\"\r\n    ],\r\n    \"question37\": [\r\n        \"0\"\r\n    ],\r\n    \"question38\": [\r\n        \"1\"\r\n    ],\r\n    \"question39\": [\r\n        \"0\"\r\n    ],\r\n    \"question40\": [\r\n        \"0#alamoda\",\r\n        \"0#previsible\",\r\n        \"0#modesta\",\r\n        \"0#severa\",\r\n        \"2#dinamica\",\r\n        \"2#curiosa\",\r\n        \"1#dementeabierta\",\r\n        \"0#sociable\",\r\n        \"1#determinada\",\r\n        \"0#refinada\"\r\n    ]\r\n}\r\n\r\n    "
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/process-average-test/creativity",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"process-average-test",
+						"creativity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Humor Q",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"humor1\": [\r\n        \"2\"\r\n    ],\r\n    \"humor2\": [\r\n        \"3\"\r\n    ],\r\n    \"humor3\": [\r\n        \"7\"\r\n    ],\r\n    \"humor4\": [\r\n        \"6\"\r\n    ],\r\n    \"humor5\": [\r\n        \"6\"\r\n    ],\r\n    \"humor6\": [\r\n        \"7\"\r\n    ],\r\n    \"humor7\": [\r\n        \"6\"\r\n    ],\r\n    \"humor8\": [\r\n        \"7\"\r\n    ],\r\n    \"humor9\": [\r\n        \"6\"\r\n    ],\r\n    \"humor10\": [\r\n        \"2\"\r\n    ],\r\n    \"humor11\": [\r\n        \"7\"\r\n    ],\r\n    \"humor12\": [\r\n        \"6\"\r\n    ],\r\n    \"humor13\": [\r\n        \"7\"\r\n    ],\r\n    \"humor14\": [\r\n        \"6\"\r\n    ],\r\n    \"humor15\": [\r\n        \"6\"\r\n    ],\r\n    \"humor16\": [\r\n        \"5\"\r\n    ],\r\n    \"humor17\": [\r\n        \"2\"\r\n    ],\r\n    \"humor18\": [\r\n        \"3\"\r\n    ],\r\n    \"humor19\": [\r\n        \"2\"\r\n    ],\r\n    \"humor20\": [\r\n        \"7\"\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/process-average-test/humor",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"process-average-test",
+						"humor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Process Category Q",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/process-years-average/creativity",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"process-years-average",
+						"creativity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Process Category Q Particularities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/process_years_particularities/creativity",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"process_years_particularities",
+						"creativity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Subject Q",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"subjects\": {\r\n        \"Álgebra\": \"Me gustó\",\r\n        \"Análisis Matemático\": \"Meh...\",\r\n        \"Programación\": \"Meh...\",\r\n        \"Filosofía\": \"No me gustó\",\r\n        \"Lógica\": \"Me gustó\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/process-subject-test/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"process-subject-test",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Process Subject Q",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/process-subject-test-result/Álgebra",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"process-subject-test-result",
+						"Álgebra"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Process All Subject Q",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/process-subject-test-all-result",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"process-subject-test-all-result"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
